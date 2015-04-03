@@ -13,7 +13,23 @@ function z=fun2
   z=1;
 end
 
+%{
+actual slising of the image
+input -
+val ,contents = witch image to slice 
+    eg: b1 => least significan bit 
+im = grayscale image , 
 
+logic 
+
+121 = 1111001
+b1 => i=1
+1 =mod(121 ,2) %last bit is taken
+60 =floor(121/(2*i))
+60=> 111100 %last bit is removed
+
+b2=> i=2
+%}
 function bit1=slicer(val,contents,im)
 switch contents{val}
     case 'b1'
