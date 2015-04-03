@@ -24,7 +24,7 @@ function varargout = guitest(varargin)
 
 % Edit the above text to modify the response to help guitest
 
-% Last Modified by GUIDE v2.5 25-Mar-2015 08:42:44
+% Last Modified by GUIDE v2.5 03-Apr-2015 08:20:11
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -190,5 +190,14 @@ if ispc
 else
     set(hObject,'BackgroundColor',get(0,'defaultUicontrolBackgroundColor'));
 end
+
+
+
+
+% --- Executes on button press in btnView.
+function btnView_Callback(hObject, eventdata, handles)
+% hObject    handle to btnView (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
 
 

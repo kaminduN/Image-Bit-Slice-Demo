@@ -15,7 +15,7 @@ function z=fun2
 end
 
 %{
-
+actual slising of the image
 input -
 val ,contents = witch image to slice 
     eg: b1 => least significan bit 
@@ -26,7 +26,7 @@ logic
 121 = 1111001
 b1 => i=1
 1 =mod(121 ,2) %last bit is taken
-60 =floor(121/(2.^i))
+60 =floor(121/(2*i))
 60=> 111100 %last bit is removed
 
 b2=> i=2
@@ -35,45 +35,44 @@ function bit1=slicer(val,contents,im)
 switch contents{val}
     case 'b1'
         %bit1 = mod(im,2);
-     bit1=sliceimage(im,0);
+     bit1=sliceimage(im,1)
     case 'b2'
-        %bit1=mod(floor(im/2),2);
-        bit1=sliceimage(im,1);
+        bit1=mod(floor(im/2),2);
     case 'b3'
-       bit1=sliceimage(im,2);
+        bit1=mod(floor(im/4),2);
+       % disp('positive 3');
     case 'b4'
-        bit1=sliceimage(im,3);
+        bit1=mod(floor(im/8),2);
+        %disp('positive 4')
     case 'b5'
-        bit1=sliceimage(im,4);
+        bit1=mod(floor(im/16),2);        
+        %disp('positive 5')
     case 'b6'
-        bit1=sliceimage(im,5);
+        bit1=mod(floor(im/32),2);
+        %disp('positive 6')
     case 'b7'
-        bit1=sliceimage(im,6);
+        bit1=mod(floor(im/64),2);
+       % disp('positive 7')
     case 'b8'
-        %bit1=mod(floor(im/128),2);
-        bit1=sliceimage(im,7);
+        bit1=mod(floor(im/128),2);
+        
     otherwise
         %disp('other value')
         bit1=im;
 end
 end
 
-%{
-actual slising of the image
-%}
 function simg= sliceimage(im,i)
-    if(i>=0)
+    if(i>0)
         simg=mod(floor(im/(2.^i)),2);
     else
         simg=im
     end
 end
 
-
 function sliceView(im)
-%{
-figure(1),title('Bit slice'),
 
+figure(1),title('Bit slice'),
 subplot(331),
 imshow();
 subplot(332),
@@ -81,5 +80,5 @@ imshow();
 subplot(332),
 imshow();
 
-%}
+
 end
