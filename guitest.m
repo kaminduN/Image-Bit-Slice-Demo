@@ -91,7 +91,10 @@ if user_cancle
     return
 end
 %}
-path='lena2.bmp';
+
+%path='lena2.bmp';
+[filename, path]=uigetfile({'*.jpg;*.tif;*.png;*.gif','All Image Files'},'Load image to Slice','lena2.bmp');
+
 im = myfuns.loadimage(path);
 %im=im2double(im);
 im2=im;%backup
