@@ -3,7 +3,7 @@ function funs = defineMyFunctions
   funs.loadimage=@loadimage;
   funs.fun2=@fun2;
   funs.slicer=@slicer;
-  funs.view=@sliceView;
+  funs.sliceView=@sliceView;
 end
 
 function im=loadimage(path)
@@ -71,15 +71,24 @@ end
 
 
 function sliceView(im)
-%{
+
 figure(1),title('Bit slice'),
-
-subplot(331),
-imshow();
-subplot(332),
-imshow();
-subplot(332),
-imshow();
-
-%}
+    
+        subplot(331),
+        imshow(sliceimage(im,0),[]),title('least significant bit');
+        subplot(332),
+        imshow(sliceimage(im,1),[]);
+        subplot(333),
+        imshow(sliceimage(im,2),[]);
+        subplot(334),
+        imshow(sliceimage(im,3),[]);
+        subplot(335),
+        imshow(sliceimage(im,4),[]);
+        subplot(336),
+        imshow(sliceimage(im,5),[]);
+        subplot(337)
+        imshow(sliceimage(im,6),[]);
+        subplot(338),
+        imshow(sliceimage(im,7),[]),title('most significant bit');
+        
 end

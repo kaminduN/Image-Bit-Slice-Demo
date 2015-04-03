@@ -199,5 +199,5 @@ function btnView_Callback(hObject, eventdata, handles)
 % hObject    handle to btnView (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
-
+global im myfuns
+myfuns.sliceView(im);
