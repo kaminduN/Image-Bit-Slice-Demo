@@ -65,7 +65,7 @@ function simg= sliceimage(im,i)
     if(i>=0)
         simg=mod(floor(im/(2.^i)),2);
     else
-        simg=im
+        simg=im;
     end
 end
 

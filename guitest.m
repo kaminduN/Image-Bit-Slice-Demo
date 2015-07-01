@@ -93,9 +93,10 @@ end
 %}
 
 %path='lena2.bmp';
-[filename, path]=uigetfile({'*.jpg;*.tif;*.png;*.gif','All Image Files'},'Load image to Slice','lena2.bmp');
-
-im = myfuns.loadimage(path);
+[filename, path]=uigetfile({'*.jpg;*.tif;*.png;*.gif;*.bmp','All Image Files'},'Load image to Slice','lena2.bmp');
+%gets the fullpath by combining path to file and file name
+pathf = strcat(path,filename);
+im = myfuns.loadimage(pathf);
 %im=im2double(im);
 im2=im;%backup
 axes(handles.axes1);
